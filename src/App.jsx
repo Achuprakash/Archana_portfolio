@@ -23,10 +23,7 @@ export default function App() {
 
   // ⭐️ UPDATED SKILLS DATA: UI/UX & Design Software categories have been REMOVED. ⭐️
   const skillsData = [
-    {
-      category: "Other Skills",
-      skills: ["MS Excel", "Fashion Designing", "Trend Analysis", "Merchandising"],
-    },
+    
   ];
 
   // ----------------------------------------------------------------
