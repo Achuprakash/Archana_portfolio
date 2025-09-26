@@ -1,8 +1,9 @@
 import { defineConfig } from 'vite';
 import react from '@vitejs/plugin-react';
 
-// Replace 'Archana_portfolio' with your actual repository name
+// The repository name is 'Archana_portfolio'
 export default defineConfig({
   plugins: [react()],
-  base: 'https://github.com/Achuprakash/Archana_portfolio, // <-- ADD OR EDIT THIS LINE
+  // ⭐️ CRITICAL FIX: Set the base path to your repository name
+  base: "/Archana_portfolio/", 
 });

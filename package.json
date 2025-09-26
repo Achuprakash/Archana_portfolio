@@ -1,6 +1,6 @@
 {
-  "name": "portfolio-app",
-  "homepage": "https://achuprakash.github.io/Archana_portfolio/",
+  "name": "archana_portfolio",
+  "homepage": "https://Achuprakash.github.io/Archana_portfolio/",
   "private": true,
   "version": "0.0.0",
   "type": "module",
@@ -13,6 +13,7 @@
     "deploy": "gh-pages -d dist"
   },
   "dependencies": {
+    "lucide-react": "^0.544.0",
     "react": "^19.1.1",
     "react-dom": "^19.1.1",
     "react-router-dom": "^7.9.2"
