@@ -21,8 +21,9 @@ export default function App() {
     },
   };
 
-  // ⭐️ UPDATED SKILLS DATA: UI/UX & Design Software categories have been REMOVED. ⭐️
- 
+  // ⭐️ FIX: skillsData is now an empty array. 
+  // This removes all categorized skills from the Skills section. ⭐️
+  const skillsData = [];
 
   // ----------------------------------------------------------------
   // UPDATED PROJECTS DATA (Retained for context)
@@ -112,7 +113,6 @@ export default function App() {
       <main className="main-content">
         <div className="container">
           {/* Hero Section */}
-          {/* ... (Hero Section JSX remains the same) ... */}
           <section id="home" className="hero-section">
             <div className="hero-grid">
               <div className="hero-content">
@@ -125,7 +125,6 @@ export default function App() {
 
                 {/* Contact Links */}
                 <div className="contact-links mt-4 space-y-2 text-gray-400">
-                  {/* ... (Contact links remain the same) ... */}
                   <div className="flex items-center space-x-2">
                     <Mail size={16} className="text-amber-400" />
                     <a href={`mailto:${resumeData.contact.email}`}>
@@ -177,7 +176,6 @@ export default function App() {
               </div>
               {/* Resume Actions */}
               <section id="resume" className="section">
-                {/* ... (Resume Actions JSX remains the same) ... */}
                 <div className="section-header">
                 </div>
 
@@ -204,7 +202,6 @@ export default function App() {
           </section>
 
           {/* Projects Section */}
-          {/* ... (Projects Section JSX remains the same) ... */}
           <section id="projects" className="section">
             <div className="section-header">
               <h2 className="section-title">Projects</h2>
@@ -262,11 +259,10 @@ export default function App() {
             </div>
           </section>
 
-          {/* Skills Section - CORRECTLY RENDERED HERE */}
+          {/* Skills Section - The categorized list will now be empty, but the marquee will remain (based on your Skills.jsx code) */}
           <Skills skillsData={skillsData} />
 
           {/* Internship Section */}
-          {/* ... (Internship Section JSX remains the same) ... */}
           <section id="internship" className="section">
             <div className="section-header">
               <h2 className="section-title">Internship</h2>
@@ -283,7 +279,6 @@ export default function App() {
           </section>
 
           {/* Certification Section */}
-          {/* ... (Certification Section JSX remains the same) ... */}
           <section id="certification" className="section">
             <div className="section-header">
               <h2 className="section-title">Certification</h2>
