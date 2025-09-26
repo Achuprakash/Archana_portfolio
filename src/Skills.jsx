@@ -1,36 +1,69 @@
-import React, { useState } from 'react';
-import { ChevronDown, ChevronUp } from 'lucide-react';
-import './App.css'; // Assuming you have an App.css with general styles
+import React from 'react';
+import './Skills.css'; // Assuming you have a CSS file for your styles
 
-export default function Skills({ skillsData }) {
-  const [isOpen, setIsOpen] = useState(true);
+// ----------------------------------------------------------------------
+// 1. Tool Data
+// IMPORTANT: Update the 'image' paths to where your logo files are located.
+// If using the 'public' folder, paths should start from the root (e.g., /images/photoshop.png)
+// ----------------------------------------------------------------------
+// In Skills.js
 
+const BASE_PATH = '/Archana-portfolio'; // Define the base path once
+
+const tools = [
+  // Append the BASE_PATH to the start of every image path
+  { image: `${BASE_PATH}/icon/photoshop.png` },
+  {  image: `${BASE_PATH}/icon/Ai.png` },
+  { image: `${BASE_PATH}/icon/Figma.png` },
+  // NOTE: I'm assuming you renamed 'M iro.png' to 'miro.png' for simplicity
+  {  image: `${BASE_PATH}/icon/Miro.png` }, 
+  { image: `${BASE_PATH}/icon/framer.png` },
+  {  image: `${BASE_PATH}/icon/maze.png` },
+];
+
+// ... rest of your component remains the same ...
+
+// Duplicate the array multiple times (e.g., 3x) for a seamless loop.
+// The content should be long enough to fill the screen twice before it repeats.
+const marqueeContent = [...tools, ...tools, ...tools];
+
+// ----------------------------------------------------------------------
+// 2. Individual Card Component (Helper)
+// ----------------------------------------------------------------------
+const ToolCard = ({ tool }) => (
+  <div className="tool-card">
+    {/* You could wrap the image in a div if you need more complex styling */}
+    <img src={tool.image} alt={tool.name} className="tool-image" />
+    <p className="tool-name">{tool.name}</p>
+  </div>
+);
+
+// ----------------------------------------------------------------------
+// 3. Main Skills Component
+// ----------------------------------------------------------------------
+const Skills = () => {
   return (
-    <section id="skills" className="skills-section section">
-      <div className="section-header">
-        <div className="section-title-container" onClick={() => setIsOpen(!isOpen)}>
-          <h2 className="section-title">My Skills</h2>
-          {isOpen ? <ChevronUp size={32} className="chevron-icon" /> : <ChevronDown size={32} className="chevron-icon" />}
-        </div>
-        <p className="section-subtitle">
-          A summary of my technical skills and competencies.
-        </p>
-      </div>
+    <section id="skills-section">
+      <h1>My Skills & Tools</h1>
+      
+      {/* ... your other skills (Design, Development, etc.) ... */}
 
-      <div className={`skills-grid ${isOpen ? 'expanded' : 'collapsed'}`}>
-        {skillsData.map((category, index) => (
-          <div key={index} className="skills-category">
-            <h3>{category.category}</h3>
-            <div className="skills-list">
-              {category.skills.map((skill, skillIndex) => (
-                <span key={skillIndex} className="skill-item">
-                  {skill}
-                </span>
-              ))}
-            </div>
+      <div className="tools-sub-section">
+       
+        
+        {/* The Marquee Container */}
+        <div className="marquee-container">
+          {/* The content that gets animated */}
+          <div className="marquee-content">
+            {marqueeContent.map((tool, index) => (
+              // Use a unique key for each duplicated card
+              <ToolCard key={`${tool.name}-${index}`} tool={tool} />
+            ))}
           </div>
-        ))}
+        </div>
       </div>
     </section>
   );
-}
+};
+
+export default Skills;

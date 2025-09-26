@@ -1,80 +1,85 @@
+/* ---------------------------------------------------------------------- */
+/* MARQUEE CONTAINER STYLES */
+/* ---------------------------------------------------------------------- */
 
-
-.section-header {
-  text-align: center;
+.tools-sub-section {
+  padding: 40px 0;
+  background-color:#0a0a0a; /* Light background for contrast */
 }
 
-.section-title-container {
+/* The viewport/window for the scrolling content */
+.marquee-container {
+  overflow: hidden; /* Hides content outside this box */
+  width: 100%;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+}
+
+/* The element containing all the cards - this is what we animate */
+.marquee-content {
   display: flex;
+  width: fit-content; 
+  /* Critical: The total width of all duplicated cards */
+  
+  animation: scroll-left 40s linear infinite; /* Animation applied here */
+}
+
+/* Pause the animation when the user hovers over the tools */
+.marquee-content:hover {
+  animation-play-state: paused;
+}
+
+/* ---------------------------------------------------------------------- */
+/* CARD STYLES */
+/* ---------------------------------------------------------------------- */
+
+.tool-card {
+  flex-shrink: 0; /* Prevents cards from squishing to fit */
+  display: flex;
+  flex-direction: column;
   align-items: center;
   justify-content: center;
-  cursor: pointer;
-  gap: 1rem;
+  background-color: #0a0a0a;
+  border: 1px solid #0a0a0a;
+  border-radius: 8px;
+  padding: 15px 25px;
+  margin: 10px 15px; /* Adds space between the cards */
+  min-width: 150px; /* Adjust card size */
+  transition: transform 0.2s ease;
 }
 
-.section-title {
-  font-size: 2.25rem;
-  font-weight: 900;
-  color: #f5f5f5;
-  margin: 0;
+.tool-card:hover {
+    transform: translateY(-15px); /* Simple hover effect */
 }
 
-.section-subtitle {
-  color: #a3a3a3;
-  margin-top: 1rem;
-  max-width: 48rem;
-  margin-left: auto;
-  margin-right: auto;
+.tool-image {
+  width: 150px; /* Size of the logo */
+  height: 150px;
+  object-fit: contain;
+  margin-bottom: 2px;
 }
 
-.chevron-icon {
-  color: #f59e0b;
-  transition: transform 0.3s ease;
-}
-
-.skills-grid {
-  display: grid;
-  gap: 1.5rem;
-  margin-top: 2rem;
-  overflow: hidden;
-  transition: max-height 0.5s ease-in-out;
-}
-
-.skills-grid.collapsed {
-  max-height: 0;
-}
-
-.skills-grid.expanded {
-  max-height: 1000px; /* A large value to allow the content to fully expand */
-}
-
-.skills-category {
-  background: #1c1c1c;
-  padding: 1.5rem;
-  border-radius: 1rem;
-  border: 1px solid #404040;
-}
-
-.skills-category h3 {
-  font-size: 1.25rem;
-  font-weight: 600;
-  color: #f5f5f5;
-  margin-bottom: 1rem;
-  border-bottom: 2px solid #f59e0b;
-  padding-bottom: 0.5rem;
-}
-
-.skills-list {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 0.75rem;
-}
-
-.skill-item {
-  background-color: #404040;
-  color: #d4d4d4;
-  padding: 0.5rem 1rem;
-  border-radius: 9999px;
+.tool-name {
   font-size: 0.9rem;
-  font-weight: 500;
+  font-weight: 600;
+  color: #333;
+  white-space: nowrap; /* Keeps the name on one line */
+}
+
+/* ---------------------------------------------------------------------- */
+/* THE INFINITE SCROLL ANIMATION */
+/* ---------------------------------------------------------------------- */
+
+/* * The animation moves the content to the left.
+* Since we duplicated the tool list 3 times (300% total content), 
+* we move it by -33.3333% (100% / 3). 
+* This makes the end of the first set align with the start of the viewport,
+* creating a perfect, seamless loop.
+*/
+@keyframes scroll-left {
+  0% {
+    transform: translateX(0%); 
+  }
+  100% {
+    transform: translateX(-40.3333%); 
+  }
 }
