@@ -69,15 +69,25 @@ body {
 }
 
 .main-content {
+  /* Keep only the vertical padding (top and bottom) */
   padding-top: 6rem;
   padding-bottom: 3rem;
-  padding-left: 1.5rem;
-  padding-right: 1.5rem;
+  /* Remove horizontal padding and ensure it spans 100% of the viewport width */
+  width: 100%; 
 }
 
+/* --- UPDATED .container --- */
 .container {
-  max-width: 80rem;
-  margin: auto;
+  /* Set a maximum width */
+  max-width: 80rem; 
+  /* Crucial: Center the container horizontally */
+  margin-left: auto;
+  margin-right: auto;
+  
+  /* Add horizontal padding so content doesn't touch the edge on small screens */
+  padding-left: 1.5rem;
+  padding-right: 1.5rem;
+  
   display: flex;
   flex-direction: column;
   gap: 5rem;
