@@ -50,6 +50,17 @@ export default function App() {
       link: "#",
       github: "#",
     },
+    //healt care app
+    {
+      title: "Dr.check-Healtcare and Management",
+      description:
+        "Dr.Check is an intuitive and reliable web-based doctor appointment booking platform designed to simplify and modernize the way patients connect with healthcareprofessionals. Whether for a routine check-up or a specialist consultation, Dr.Check ensures a seamless experience from booking to post-visit care — all in one place",
+      image: `${BASE_URL}/Drcheck.jpg`,
+      technologies: ["Figma", "UI Design", "Information Architecture"],
+      behanceLink:'https://www.behance.net/gallery/236149405/Dr-check-Hospital-Management',
+      link: "#",
+      github: "#",
+    },
     // ----------------------------------
     {
       title: "Betta Fish Garment Design",
@@ -67,7 +78,7 @@ export default function App() {
   // --- Certification Data Object (Retained for context) ---
   const certificationData = {
     title: "UI/UX Design Certification – IITM GUVI",
-    description: "Currently pursuing a professional UI/UX certification, building expertise in user research, wireframing, prototyping, and design thinking. This certification provides a strong foundation for user-centric design principles.",
+    description: "a professional UI/UX certification, building expertise in user research, wireframing, prototyping, and design thinking. This certification provides a strong foundation for user-centric design principles.",
     image: `${BASE_URL}/GuviCertification.png`, 
     link: 'https://v2.zenclass.in/certificateDownload/SJWA0zyV9ixJkE4j?download=true', 
   }
