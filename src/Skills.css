@@ -1,85 +1,156 @@
 /* ---------------------------------------------------------------------- */
-/* MARQUEE CONTAINER STYLES */
+/* MARQUEE CONTAINER STYLES (RESPONSIVE) */
 /* ---------------------------------------------------------------------- */
 
 .tools-sub-section {
   padding: 40px 0;
-  background-color:#0a0a0a; /* Light background for contrast */
+  background-color: #0a0a0a;
 }
 
-/* The viewport/window for the scrolling content */
 .marquee-container {
-  overflow: hidden; /* Hides content outside this box */
+  overflow: hidden;
   width: 100%;
   box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+  position: relative;
 }
 
-/* The element containing all the cards - this is what we animate */
+/* The moving row of cards */
 .marquee-content {
   display: flex;
-  width: fit-content; 
-  /* Critical: The total width of all duplicated cards */
-  
-  animation: scroll-left 40s linear infinite; /* Animation applied here */
+  align-items: center;
+  width: fit-content;
+  animation: scroll-left 40s linear infinite;
+  will-change: transform;
 }
 
-/* Pause the animation when the user hovers over the tools */
+/* Pause scroll on hover */
 .marquee-content:hover {
   animation-play-state: paused;
 }
 
 /* ---------------------------------------------------------------------- */
-/* CARD STYLES */
+/* TOOL CARD STYLING */
 /* ---------------------------------------------------------------------- */
 
 .tool-card {
-  flex-shrink: 0; /* Prevents cards from squishing to fit */
+  flex-shrink: 0;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  background-color: #0a0a0a;
-  border: 1px solid #0a0a0a;
-  border-radius: 8px;
+
+  background-color: #121212;
+  border: 1px solid #262626;
+  border-radius: 12px;
+
   padding: 15px 25px;
-  margin: 10px 15px; /* Adds space between the cards */
-  min-width: 150px; /* Adjust card size */
-  transition: transform 0.2s ease;
+  margin: 10px 15px;
+  min-width: 150px;
+  transition: transform 0.2s ease, box-shadow 0.3s ease;
 }
 
 .tool-card:hover {
-    transform: translateY(-15px); /* Simple hover effect */
+  transform: translateY(-8px);
+  box-shadow: 0 10px 15px rgba(0, 0, 0, 0.3);
 }
 
 .tool-image {
-  width: 150px; /* Size of the logo */
+  width: 150px;
   height: 150px;
   object-fit: contain;
-  margin-bottom: 2px;
+  margin-bottom: 8px;
 }
 
 .tool-name {
-  font-size: 0.9rem;
+  font-size: 1rem;
   font-weight: 600;
-  color: #333;
-  white-space: nowrap; /* Keeps the name on one line */
+  color: #f5f5f5;
+  white-space: nowrap;
 }
 
 /* ---------------------------------------------------------------------- */
-/* THE INFINITE SCROLL ANIMATION */
+/* RESPONSIVE BREAKPOINTS */
 /* ---------------------------------------------------------------------- */
 
-/* * The animation moves the content to the left.
-* Since we duplicated the tool list 3 times (300% total content), 
-* we move it by -33.3333% (100% / 3). 
-* This makes the end of the first set align with the start of the viewport,
-* creating a perfect, seamless loop.
-*/
+/* SMALL PHONES (max-width: 480px) */
+@media (max-width: 480px) {
+  .tools-sub-section {
+    padding: 20px 0;
+  }
+
+  .tool-card {
+    min-width: 100px;
+    padding: 10px 15px;
+    margin: 6px 10px;
+    border-radius: 10px;
+  }
+
+  .tool-image {
+    width: 80px;
+    height: 80px;
+  }
+
+  .tool-name {
+    font-size: 0.8rem;
+  }
+
+  .marquee-content {
+    animation: scroll-left 25s linear infinite; /* slightly faster on small screens */
+  }
+}
+
+/* TABLETS (481px - 768px) */
+@media (min-width: 481px) and (max-width: 768px) {
+  .tool-card {
+    min-width: 130px;
+    padding: 12px 18px;
+    margin: 8px 12px;
+  }
+
+  .tool-image {
+    width: 100px;
+    height: 100px;
+  }
+
+  .tool-name {
+    font-size: 0.9rem;
+  }
+
+  .marquee-content {
+    animation: scroll-left 35s linear infinite;
+  }
+}
+
+/* DESKTOP (769px and above) */
+@media (min-width: 769px) {
+  .tool-card {
+    min-width: 160px;
+    padding: 15px 25px;
+  }
+
+  .tool-image {
+    width: 130px;
+    height: 130px;
+  }
+
+  .tool-name {
+    font-size: 1rem;
+  }
+
+  .marquee-content {
+    animation: scroll-left 40s linear infinite;
+  }
+}
+
+/* ---------------------------------------------------------------------- */
+/* ANIMATION KEYFRAMES */
+/* ---------------------------------------------------------------------- */
+
 @keyframes scroll-left {
   0% {
-    transform: translateX(0%); 
+    transform: translateX(0%);
   }
   100% {
-    transform: translateX(-40.3333%); 
+    transform: translateX(-40.3333%);
   }
 }
