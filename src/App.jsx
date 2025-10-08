@@ -222,7 +222,9 @@ export default function App() {
                   >
                     View Resume
                   </a>
+                 <div>
 
+                 </div>
                   <a
                     href={`${BASE_URL}archana-resume.pdf`}
                     download="Archana_J_Resume.pdf"
@@ -347,7 +349,7 @@ export default function App() {
                         rel="noopener noreferrer"
                         className="btn btn-secondary mt-2 inline-block"
                     >
-                        Verify Certificate Externally
+                         Certificate
                     </a>
                 </div>
             </div>
