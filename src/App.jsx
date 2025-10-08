@@ -217,7 +217,7 @@ export default function App() {
                 {/* The 'hero-actions' class controls the stacking/full width on mobile. */}
                 <div className="hero-actions">  
                   <a
-                    href={`${BASE_URL}archana-resume.pdf`}
+                    href={`${BASE_URL}Archana_Resume.pdf`}
                     download="Archana_Resume.pdf"
                     className="btn btn-primary"
                   >
