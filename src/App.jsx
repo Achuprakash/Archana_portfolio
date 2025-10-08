@@ -136,68 +136,68 @@ export default function App() {
 
                 {/* Contact Links */}
                 <div className="contact-links mt-4 space-y-2 text-gray-400">
-  {/* Email */}
-  <div className="flex items-center space-x-2">
-    <Mail size={16} className="text-amber-400" />
-    <a
-      href={`mailto:${resumeData.contact.email}`}
-      className="text-current hover:text-amber-500 transition-colors break-all"
-    >
-      {resumeData.contact.email}
-    </a>
-  </div>
+                  {/* Email */}
+                  <div className="flex items-center space-x-2">
+                    <Mail size={16} className="text-amber-400" />
+                    <a
+                      href={`mailto:${resumeData.contact.email}`}
+                      className="text-current hover:text-amber-500 transition-colors break-all"
+                    >
+                      {resumeData.contact.email}
+                    </a>
+                  </div>
 
-  {/* Phone */}
-  <div className="flex items-center space-x-2">
-    <Phone size={16} className="text-amber-400" />
-    <a
-      href={`tel:${resumeData.contact.phone}`}
-      className="text-current hover:text-amber-500 transition-colors"
-    >
-      {resumeData.contact.phone}
-    </a>
-  </div>
+                  {/* Phone */}
+                  <div className="flex items-center space-x-2">
+                    <Phone size={16} className="text-amber-400" />
+                    <a
+                      href={`tel:${resumeData.contact.phone}`}
+                      className="text-current hover:text-amber-500 transition-colors"
+                    >
+                      {resumeData.contact.phone}
+                    </a>
+                  </div>
 
-  {/* Location */}
-  <div className="flex items-center space-x-2">
-    <MapPin size={16} className="text-amber-400" />
-    <span>{resumeData.contact.location}</span>
-  </div>
+                  {/* Location */}
+                  <div className="flex items-center space-x-2">
+                    <MapPin size={16} className="text-amber-400" />
+                    <span>{resumeData.contact.location}</span>
+                  </div>
 
-  {/* LinkedIn */}
-  {resumeData.contact.linkedin && (
-    <div className="flex items-center space-x-2">
-      <Linkedin size={16} className="text-amber-400" />
-      <a
-        href={resumeData.contact.linkedin}
-        target="_blank"
-        rel="noopener noreferrer"
-        className="text-current hover:text-amber-500 transition-colors"
-      >
-        LinkedIn
-      </a>
-    </div>
-  )}
+                  {/* LinkedIn */}
+                  {resumeData.contact.linkedin && (
+                    <div className="flex items-center space-x-2">
+                      <Linkedin size={16} className="text-amber-400" />
+                      <a
+                        href={resumeData.contact.linkedin}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="text-current hover:text-amber-500 transition-colors"
+                      >
+                        LinkedIn
+                      </a>
+                    </div>
+                  )}
 
-  {/* Behance */}
-  {resumeData.contact.behance && (
-    <div className="flex items-center space-x-2">
-      <ExternalLink size={16} className="text-amber-400" />
-      <a
-        href={resumeData.contact.behance}
-        target="_blank"
-        rel="noopener noreferrer"
-        className="text-current hover:text-amber-500 transition-colors"
-      >
-        Behance
-      </a>
-    </div>
-  )}
+                  {/* Behance */}
+                  {resumeData.contact.behance && (
+                    <div className="flex items-center space-x-2">
+                      <ExternalLink size={16} className="text-amber-400" />
+                      <a
+                        href={resumeData.contact.behance}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="text-current hover:text-amber-500 transition-colors"
+                      >
+                        Behance
+                      </a>
+                    </div>
+                  )}
 
-  {/* GitHub (optional) */}
-</div>
-</div>
-
+                  {/* GitHub (optional) */}
+                </div>
+              </div>
+              
               {/* Image placeholder */}
               <div className="hero-image-container">
                 <div className="hero-image-wrapper">
@@ -208,12 +208,14 @@ export default function App() {
                   />
                 </div>
               </div>
-              {/* Resume Actions */}
+              
+              {/* Resume Actions - CORRECTED STRUCTURE */}
               <section id="resume" className="section">
-                <div className="section-header">
-                </div>
+                {/* section-header kept for structure, but is empty */}
+                <div className="section-header"></div> 
 
-                <div className="resume-actions flex gap-4 mt-4">
+                {/* The 'hero-actions' class is what controls the stacking/full width on mobile */}
+                <div className="hero-actions">
                   <a
                     href={`${BASE_URL}archana-resume.pdf`}
                     target="_blank"
@@ -221,10 +223,9 @@ export default function App() {
                     className="btn btn-secondary"
                   >
                     View Resume
-                  </a>                
-                </div>
-                <div>
-                   <a
+                  </a>
+                  
+                  <a
                     href={`${BASE_URL}archana-resume.pdf`}
                     download="Archana_J_Resume.pdf"
                     className="btn btn-primary"
@@ -233,6 +234,8 @@ export default function App() {
                   </a>
                 </div>
               </section>
+              {/* END OF CORRECTED STRUCTURE */}
+
             </div>
           </section>
 
@@ -342,14 +345,17 @@ export default function App() {
                 <div className="project-content">
                     <h3>{certificationData.title}</h3>
                     <p>{certificationData.description}</p>
-                    <a
-                        href={certificationData.link}
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        className="btn btn-secondary mt-2 inline-block"
-                    >
-                         Certificate
-                    </a>
+                    {/* The project-links class from CSS is what handles the stacking for this link, but since there's only one link, we don't need the flex-direction logic. The full-width styling from .btn will handle it. */}
+                    <div className="project-links"> 
+                      <a
+                          href={certificationData.link}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          className="btn btn-secondary" // Reusing btn styles for a button-like appearance and full width on mobile
+                      >
+                          Verify Certificate Externally
+                      </a>
+                    </div>
                 </div>
             </div>
           </section>
