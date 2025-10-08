@@ -67,7 +67,7 @@ export default function App() {
       description:
         "Designed and developed garments around the theme of Betta fish, combining fashion technology with functional design.",
       technologies: ["Illustrator", "Photoshop", "Fashion Tech"],
-      image: null, 
+      image: `${BASE_URL}/betta_fish.jpg`,
       behanceLink: null,
       link: "#",
       github: "#",
