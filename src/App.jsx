@@ -221,11 +221,10 @@ export default function App() {
                     className="btn btn-secondary"
                   >
                     View Resume
-                  </a>
-                 <div>
-
-                 </div>
-                  <a
+                  </a>                
+                </div>
+                <div>
+                   <a
                     href={`${BASE_URL}archana-resume.pdf`}
                     download="Archana_J_Resume.pdf"
                     className="btn btn-primary"
