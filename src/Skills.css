@@ -5,25 +5,24 @@
 .tools-sub-section {
   padding: 40px 0;
   background-color: #0a0a0a;
+  width: 100%;
+  overflow: hidden;
 }
 
 .marquee-container {
   overflow: hidden;
   width: 100%;
-  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
   position: relative;
 }
 
-/* The moving row of cards */
 .marquee-content {
   display: flex;
   align-items: center;
-  width: fit-content;
+  width: max-content;
   animation: scroll-left 40s linear infinite;
   will-change: transform;
 }
 
-/* Pause scroll on hover */
 .marquee-content:hover {
   animation-play-state: paused;
 }
@@ -38,11 +37,9 @@
   flex-direction: column;
   align-items: center;
   justify-content: center;
-
   background-color: #121212;
   border: 1px solid #262626;
   border-radius: 12px;
-
   padding: 15px 25px;
   margin: 10px 15px;
   min-width: 150px;
@@ -55,8 +52,8 @@
 }
 
 .tool-image {
-  width: 150px;
-  height: 150px;
+  width: 130px;
+  height: 130px;
   object-fit: contain;
   margin-bottom: 8px;
 }
@@ -72,59 +69,59 @@
 /* RESPONSIVE BREAKPOINTS */
 /* ---------------------------------------------------------------------- */
 
-/* SMALL PHONES (max-width: 480px) */
+/* SMALL PHONES (≤480px) */
 @media (max-width: 480px) {
   .tools-sub-section {
     padding: 20px 0;
   }
 
+  .marquee-content {
+    animation: scroll-left 25s linear infinite;
+  }
+
   .tool-card {
-    min-width: 100px;
-    padding: 10px 15px;
-    margin: 6px 10px;
+    min-width: 90px;
+    padding: 8px 12px;
+    margin: 5px 8px;
     border-radius: 10px;
   }
 
   .tool-image {
-    width: 80px;
-    height: 80px;
+    width: 60px;
+    height: 60px;
   }
 
   .tool-name {
-    font-size: 0.8rem;
-  }
-
-  .marquee-content {
-    animation: scroll-left 25s linear infinite; /* slightly faster on small screens */
+    font-size: 0.75rem;
   }
 }
 
-/* TABLETS (481px - 768px) */
+/* TABLETS (481px–768px) */
 @media (min-width: 481px) and (max-width: 768px) {
   .tool-card {
-    min-width: 130px;
-    padding: 12px 18px;
-    margin: 8px 12px;
+    min-width: 120px;
+    padding: 10px 15px;
+    margin: 8px 10px;
   }
 
   .tool-image {
-    width: 100px;
-    height: 100px;
+    width: 90px;
+    height: 90px;
   }
 
   .tool-name {
-    font-size: 0.9rem;
+    font-size: 0.85rem;
   }
 
   .marquee-content {
-    animation: scroll-left 35s linear infinite;
+    animation: scroll-left 32s linear infinite;
   }
 }
 
-/* DESKTOP (769px and above) */
+/* DESKTOP (≥769px) */
 @media (min-width: 769px) {
   .tool-card {
-    min-width: 160px;
+    min-width: 150px;
     padding: 15px 25px;
   }
 

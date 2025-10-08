@@ -45,19 +45,16 @@ const Skills = ({ skillsData }) => {
         <p className="section-subtitle">Core UI/UX, Design Software, and other relevant abilities.</p>
       </div>
 
-      {/* MARQUEE SECTION (for visual tool icons) */}
-      <div className="tools-marquee-wrapper">
-          <div className="marquee-container">
-            <div className="marquee-content">
-              {marqueeContent.map((tool, index) => (
-                <ToolCard 
-                    key={`${tool.name}-${index}`} 
-                    tool={tool} 
-                />
-              ))}
-            </div>
-          </div>
-      </div>
+      <div className="tools-sub-section">
+  <div className="marquee-container">
+    <div className="marquee-content">
+      {marqueeContent.map((tool, index) => (
+        <ToolCard key={`${tool.name}-${index}`} tool={tool} />
+      ))}
+    </div>
+  </div>
+</div>
+
       
       {/* CATEGORIZED LIST SECTION (for detailed skills list from App.jsx) */}
       <div className="categorized-skills-grid">
