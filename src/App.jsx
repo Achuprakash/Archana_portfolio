@@ -353,7 +353,7 @@ export default function App() {
                           rel="noopener noreferrer"
                           className="btn btn-secondary" // Reusing btn styles for a button-like appearance and full width on mobile
                       >
-                          Verify Certificate Externally
+                           Certificate
                       </a>
                     </div>
                 </div>
