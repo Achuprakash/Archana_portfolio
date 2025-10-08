@@ -215,16 +215,7 @@ export default function App() {
                 <div className="section-header"></div> 
 
                 {/* The 'hero-actions' class controls the stacking/full width on mobile. */}
-                <div className="hero-actions">
-                  <a
-                    href={`${BASE_URL}archana-resume.pdf`}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="btn btn-secondary"
-                  >
-                    View Resume
-                  </a>
-                  
+                <div className="hero-actions">  
                   <a
                     href={`${BASE_URL}archana-resume.pdf`}
                     download="Archana_J_Resume.pdf"
