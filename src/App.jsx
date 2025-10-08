@@ -1,5 +1,5 @@
 import React from 'react';
-import { Mail, Phone, MapPin, Linkedin, Github } from 'lucide-react';
+import { Mail, Phone, MapPin, Linkedin, Github, ExternalLink } from 'lucide-react';
 import Skills from './Skills.jsx';
 import './App.css';
 
@@ -16,8 +16,8 @@ export default function App() {
       email: "jarchu54@gmail.com",
       phone: "7397505544",
       location: "Tiruppur, Tamil Nadu",
-      linkedin: "archana-j",
-      github: "archana-ux",
+      linkedin: "https://www.linkedin.com/in/archanajayaprakash30/",
+      behance: "https://www.behance.net/achuprakash",
     },
   };
 
@@ -136,43 +136,67 @@ export default function App() {
 
                 {/* Contact Links */}
                 <div className="contact-links mt-4 space-y-2 text-gray-400">
-                  <div className="flex items-center space-x-2">
-                    <Mail size={16} className="text-amber-400" />
-                    <a href={`mailto:${resumeData.contact.email}`}>
-                      {resumeData.contact.email}
-                    </a>
-                  </div>
-                  <div className="flex items-center space-x-2">
-                    <Phone size={16} className="text-amber-400" />
-                    <a href={`tel:${resumeData.contact.phone}`}>
-                      {resumeData.contact.phone}
-                    </a>
-                  </div>
-                  <div className="flex items-center space-x-2">
-                    <MapPin size={16} className="text-amber-400" />
-                    <span>{resumeData.contact.location}</span>
-                  </div>
-                  <div className="flex items-center space-x-2">
-                    <Linkedin size={16} className="text-amber-400" />
-                    <a
-                      href={`https://linkedin.com/in/${resumeData.contact.linkedin}`}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                    >
-                      linkedin.com/in/{resumeData.contact.linkedin}
-                    </a>
-                  </div>
-                  <div className="flex items-center space-x-2">
-                    <Github size={16} className="text-amber-400" />
-                    <a
-                      href={`https://github.com/${resumeData.contact.github}`}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                    >
-                      github.com/{resumeData.contact.github}
-                    </a>
-                  </div>
-                </div>
+  {/* Email */}
+  <div className="flex items-center space-x-2">
+    <Mail size={16} className="text-amber-400" />
+    <a
+      href={`mailto:${resumeData.contact.email}`}
+      className="text-current hover:text-amber-500 transition-colors break-all"
+    >
+      {resumeData.contact.email}
+    </a>
+  </div>
+
+  {/* Phone */}
+  <div className="flex items-center space-x-2">
+    <Phone size={16} className="text-amber-400" />
+    <a
+      href={`tel:${resumeData.contact.phone}`}
+      className="text-current hover:text-amber-500 transition-colors"
+    >
+      {resumeData.contact.phone}
+    </a>
+  </div>
+
+  {/* Location */}
+  <div className="flex items-center space-x-2">
+    <MapPin size={16} className="text-amber-400" />
+    <span>{resumeData.contact.location}</span>
+  </div>
+
+  {/* LinkedIn */}
+  {resumeData.contact.linkedin && (
+    <div className="flex items-center space-x-2">
+      <Linkedin size={16} className="text-amber-400" />
+      <a
+        href={resumeData.contact.linkedin}
+        target="_blank"
+        rel="noopener noreferrer"
+        className="text-current hover:text-amber-500 transition-colors"
+      >
+        LinkedIn
+      </a>
+    </div>
+  )}
+
+  {/* Behance */}
+  {resumeData.contact.behance && (
+    <div className="flex items-center space-x-2">
+      <ExternalLink size={16} className="text-amber-400" />
+      <a
+        href={resumeData.contact.behance}
+        target="_blank"
+        rel="noopener noreferrer"
+        className="text-current hover:text-amber-500 transition-colors"
+      >
+        Behance
+      </a>
+    </div>
+  )}
+
+  {/* GitHub (optional) */}
+</div>
+
               </div>
 
               {/* Image placeholder */}
