@@ -196,9 +196,7 @@ export default function App() {
 
   {/* GitHub (optional) */}
 </div>
-
-              </div>
-
+</div>
               {/* Image placeholder */}
               <div className="hero-image-container">
                 <div className="hero-image-wrapper">
