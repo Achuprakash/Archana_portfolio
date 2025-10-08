@@ -221,7 +221,10 @@ export default function App() {
                   >
                     View Resume
                   </a>
-
+                 
+                  
+                </div>
+                <div>
                   <a
                     href={`${BASE_URL}archana-resume.pdf`}
                     download="Archana_J_Resume.pdf"
@@ -229,7 +232,7 @@ export default function App() {
                   >
                     Download Resume
                   </a>
-                </div>
+                 </div>
               </section>
             </div>
           </section>
