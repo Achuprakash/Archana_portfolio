@@ -126,92 +126,92 @@ export default function App() {
         <div className="container">
           {/* Hero Section */}
           <section id="home" className="hero-section">
-            <div className="hero-grid">
-              <div className="hero-content">
-                {/* ... (Hero content, title, summary) ... */}
-                <span className="hero-greeting">Hi ARCHANA👋</span>
-                <h1 className="hero-title">
-                  I'm {resumeData.name},
-                  <span className="hero-subtitle">{resumeData.title}</span>
-                </h1>
-                <p className="hero-summary">{resumeData.summary}</p>
+  <div className="hero-grid">
+    {/* LEFT COLUMN: TEXT */}
+    <div className="hero-content">
+      <span className="hero-greeting">Hi ARCHANA👋</span>
+      <h1 className="hero-title">
+        I'm {resumeData.name},
+        <span className="hero-subtitle">{resumeData.title}</span>
+      </h1>
+      <p className="hero-summary">{resumeData.summary}</p>
 
-                {/* Contact Links (Moved into hero section as per previous CSS structure) */}
-                <div className="contact-links mt-4 space-y-2 text-gray-400">
-                  <div className="flex items-center space-x-2">
-                    <Mail size={16} className="text-amber-400" />
-                    <a href={`mailto:${resumeData.contact.email}`} className="text-current hover:text-amber-500 transition-colors">
-                      {resumeData.contact.email}
-                    </a>
-                  </div>
-                  {/* ... (Other contact links) ... */}
-                  <div className="flex items-center space-x-2">
-                    <Phone size={16} className="text-amber-400" />
-                    <a href={`tel:${resumeData.contact.phone}`} className="text-current hover:text-amber-500 transition-colors">
-                      {resumeData.contact.phone}
-                    </a>
-                  </div>
-                  <div className="flex items-center space-x-2">
-                    <MapPin size={16} className="text-amber-400" />
-                    <span>{resumeData.contact.location}</span>
-                  </div>
-                  <div className="flex items-center space-x-2">
-                    <Linkedin size={16} className="text-amber-400" />
-                    <a
-                      href={`https://linkedin.com/in/${resumeData.contact.linkedin}`}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="text-current hover:text-amber-500 transition-colors"
-                    >
-                      linkedin.com/in/{resumeData.contact.linkedin}
-                    </a>
-                  </div>
-                  <div className="flex items-center space-x-2">
-                    <Github size={16} className="text-amber-400" />
-                    <a
-                      href={`https://github.com/${resumeData.contact.github}`}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="text-current hover:text-amber-500 transition-colors"
-                    >
-                      github.com/{resumeData.contact.github}
-                    </a>
-                  </div>
-                </div>
-              </div>
+      {/* CONTACT LINKS */}
+      <div className="contact-links mt-4 space-y-2 text-gray-400">
+        <div className="flex items-center space-x-2">
+          <Mail size={16} className="text-amber-400" />
+          <a href={`mailto:${resumeData.contact.email}`} className="text-current hover:text-amber-500 transition-colors">
+            {resumeData.contact.email}
+          </a>
+        </div>
+        <div className="flex items-center space-x-2">
+          <Phone size={16} className="text-amber-400" />
+          <a href={`tel:${resumeData.contact.phone}`} className="text-current hover:text-amber-500 transition-colors">
+            {resumeData.contact.phone}
+          </a>
+        </div>
+        <div className="flex items-center space-x-2">
+          <MapPin size={16} className="text-amber-400" />
+          <span>{resumeData.contact.location}</span>
+        </div>
+        <div className="flex items-center space-x-2">
+          <Linkedin size={16} className="text-amber-400" />
+          <a
+            href={`https://linkedin.com/in/${resumeData.contact.linkedin}`}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="text-current hover:text-amber-500 transition-colors"
+          >
+            linkedin.com/in/{resumeData.contact.linkedin}
+          </a>
+        </div>
+        <div className="flex items-center space-x-2">
+          <Github size={16} className="text-amber-400" />
+          <a
+            href={`https://github.com/${resumeData.contact.github}`}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="text-current hover:text-amber-500 transition-colors"
+          >
+            github.com/{resumeData.contact.github}
+          </a>
+        </div>
+      </div>
+    </div>
 
-              {/* Image placeholder */}
-              <div className="hero-image-container">
-                <div className="hero-image-wrapper">
-                  <img
-                    src={`${BASE_URL}archana-profile.jpg`} 
-                    alt="Archana J - UI/UX Designer"
-                    className="hero-image"
-                  />
-                </div>
-              </div>
+    {/* RIGHT COLUMN: IMAGE */}
+    <div className="hero-image-container">
+      <div className="hero-image-wrapper">
+        <img
+          src={`${BASE_URL}archana-profile.jpg`}
+          alt="Archana J - UI/UX Designer"
+          className="hero-image"
+        />
+      </div>
+    </div>
+  </div>
 
-              {/* Resume Actions (Now positioned outside of hero-content/grid to be full width below it) */}
-              <div className="hero-actions"> 
-                <a
-                  href={`${BASE_URL}archana-resume.pdf`}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="btn btn-secondary"
-                >
-                  View Resume
-                </a>
+  {/* RESUME ACTIONS (Full width under both columns) */}
+  <div className="hero-actions">
+    <a
+      href={`${BASE_URL}archana-resume.pdf`}
+      target="_blank"
+      rel="noopener noreferrer"
+      className="btn btn-secondary"
+    >
+      View Resume
+    </a>
 
-                <a
-                  href={`${BASE_URL}archana-resume.pdf`}
-                  download="Archana_J_Resume.pdf"
-                  className="btn btn-primary"
-                >
-                  Download Resume
-                </a>
-              </div>
-            </div>
-          </section>
+    <a
+      href={`${BASE_URL}archana-resume.pdf`}
+      download="Archana_J_Resume.pdf"
+      className="btn btn-primary"
+    >
+      Download Resume
+    </a>
+  </div>
+</section>
+
 
           {/* Projects Section */}
           <section id="projects" className="section">
