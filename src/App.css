@@ -9,9 +9,242 @@ body {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
+/* ---------------------------------------------------------------------- */
+/* SERVICES SECTION STYLING */
+/* ---------------------------------------------------------------------- */
 
+.services-grid {
+    display: grid;
+    gap: 2rem;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    justify-content: center; 
+}
+
+.service-card {
+    /* White card style with shadow, matching the image */
+    background-color: #ffffff; 
+    border-radius: 12px;
+    padding: 2.5rem;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    border: 1px solid #e5e7eb;
+    text-align: left;
+    transition: transform 0.3s ease;
+}
+
+.service-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+}
+
+.service-icon-wrapper {
+    /* Lavender background for the icon square */
+    background-color: #9333ea; 
+    color: white; 
+    width: 60px;
+    height: 60px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 12px;
+    margin-bottom: 1.5rem;
+    /* Box shadow on the wrapper matches the image style */
+    box-shadow: 0 8px 15px rgba(147, 51, 234, 0.3); 
+}
+
+.service-icon {
+    stroke-width: 2.5;
+}
+
+.service-title {
+    color: #1f2937; 
+    font-size: 1.5rem;
+    font-weight: 700;
+    margin-bottom: 0.75rem;
+}
+
+.service-description {
+    color: #4b5563;
+    font-size: 1rem;
+    line-height: 1.6;
+}
 .portfolio-container {
   min-height: 100vh;
+}
+/* Styling for the new unified About Section (App.css) */
+.about-card {
+    background-color: #2a2a2a; /* Slightly darker background than the main content */
+    border-radius: 12px;
+    padding: 2.5rem;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+    border: 1px solid rgba(255, 255, 255, 0.1); /* Subtle border */
+}
+
+.about-card-title {
+    color: #ffffff; 
+    font-size: 1.8rem;
+    font-weight: 700;
+    margin-bottom: 0.5rem;
+}
+
+.about-card-summary {
+    color: #a0a0a0; /* Light gray text */
+    font-size: 1rem;
+    margin-bottom: 2rem;
+    line-height: 1.6;
+}
+
+.about-details-grid {
+    display: grid;
+    gap: 2rem;
+    /* Arranges the three blocks side-by-side on larger screens */
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); 
+}
+
+.detail-block {
+    padding-left: 1rem;
+    border-left: 3px solid #f59e0b; /* Amber vertical line */
+}
+     .experience-timeline-frame {
+            /* Main box styling */
+            background-color: var(--card-background); /* Use a card-like background */
+            border: 1px solid var(--border-color); 
+            border-radius: 12px;
+            padding: 2.5rem; /* Inner padding for the whole box */
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.25);
+            display: flex;
+            flex-direction: column;
+            gap: 1.5rem; /* Space between the items inside the box */
+        }
+        
+        /* Individual item styling within the frame */
+        .experience-card {
+            background: transparent; 
+            background-color: #2e2c2c;
+            border-radius: 20px;
+            padding: 20px; 
+            border: none; 
+            box-shadow: none; 
+            margin-top: 0 !important; 
+            
+            /* Subtle divider line for a timeline feel */
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+            padding-bottom: 1.5rem;
+        }
+        /* --- Services Section Styles --- */
+
+/* Services Grid Container */
+.services-grid {
+    display: grid;
+    /* Two columns for desktop, adjusted for mobile below */
+    grid-template-columns: repeat(2, 1fr); 
+    gap: 1.5rem; /* Space between the cards */
+    margin-top: 2rem;
+}
+
+@media (max-width: 768px) {
+    .services-grid {
+        grid-template-columns: 1fr; /* Single column on smaller screens */
+    }
+}
+
+/* Individual Service Card */
+.service-card {
+    background-color: var(--card-bg); /* Use your general card background color */
+    padding: 2rem;
+    background-color: #2a2a2a;
+    border-radius: 1.5rem; /* Rounded corners */
+    box-shadow: var(--shadow-small); /* Optional shadow for depth */
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    border: 1px solid var(--border-color); /* Light border */
+}
+
+.service-card:hover {
+    transform: translateY(-5px); /* Subtle lift effect on hover */
+    box-shadow: var(--shadow-medium);
+}
+
+/* Icon Wrapper */
+.service-icon-wrapper {
+    /* Mimics the purple rounded square in the image */
+    width: 64px;
+    height: 64px;
+    background: linear-gradient(135deg, var(--primary-color-light), var(--primary-color-dark)); /* Gradient purple/pink */
+    border-radius: 0.75rem; /* Slightly rounded */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 1.5rem;
+}
+
+/* Icon inside the wrapper */
+.service-icon {
+    color: var(--text-color-light); /* White/Light color for the icon */
+    stroke-width: 2.5; /* Makes the icon lines thicker */
+}
+
+/* Service Title */
+.service-title {
+    font-size: 1.5rem; /* Larger font size */
+    font-weight: 700; /* Bold */
+    color: var(--text-color-primary); /* Use your main text color */
+    margin-bottom: 0.75rem;
+}
+
+/* Service Description */
+.service-description {
+    font-size: 1rem;
+    color: var(--text-color-secondary); /* Use a slightly lighter text color */
+    line-height: 1.6;
+}
+
+        .experience-timeline-frame .experience-card:first-child {
+            padding-top: 0;
+        }
+
+        /* Remove the divider from the last card */
+        .experience-timeline-frame .experience-card:last-child {
+            border-bottom: none;
+            padding-bottom: 0;
+        }
+
+        .experience-header {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .experience-header h3 {
+            font-size: 1.25rem;
+            font-weight: 700;
+            color: var(--primary-color);
+            margin: 0;
+        }
+
+.text-gray-400.text-sm {
+    color: #a0a0a0;
+    font-size: 0.875rem;
+    margin-top: 0.25rem;
+    margin-bottom: 0.5rem;
+    padding-left: 0.5rem; /* Indent to align with the main text */
+}
+
+.detail-description {
+    color: #cccccc;
+    font-size: 0.95rem;
+    line-height: 1.5;
+    padding-left: 0.5rem; /* Indent to align with the main text */
+}
+
+/* Ensure icons and links use the amber color variable/value */
+.text-amber-400 {
+    color: #f59e0b; 
+}
+.text-amber-500 {
+    color: #f59e0b; 
+}
+.hover\:text-amber-300:hover {
+    color: #fbbf24;
 }
 
 .nav {
